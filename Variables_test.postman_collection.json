@@ -1,0 +1,152 @@
+{
+	"info": {
+		"_postman_id": "4d639a76-5870-43fc-9ac1-147ab35bf0cf",
+		"name": "Variables_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19955290"
+	},
+	"item": [
+		{
+			"name": "Getrequest",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"// Local Variable\r",
+							"\r",
+							"pm.variables(\"url_local\", \"https://reqres.in\");"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url_local}}/api/users?page=2",
+					"host": [
+						"{{url_local}}"
+					],
+					"path": [
+						"api",
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postrequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"sahil\",\r\n    \"job\": \"SDET\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_collect}}/api/users",
+					"host": [
+						"{{url_collect}}"
+					],
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Putrequest",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"sahil raza\",\r\n    \"job\": \"QA Manager\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url_collect}}/api/users/361",
+					"host": [
+						"{{url_collect}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"361"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deleterequest",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url_collect}}/api/users/361",
+					"host": [
+						"{{url_collect}}"
+					],
+					"path": [
+						"api",
+						"users",
+						"361"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url_collect",
+			"value": "https://reqres.in",
+			"type": "string"
+		},
+		{
+			"key": "user_coll",
+			"value": ""
+		}
+	]
+}
